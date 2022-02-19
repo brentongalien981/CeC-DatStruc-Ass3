@@ -1,7 +1,5 @@
 package com.exercise1.bren.baga;
 
-import java.util.Iterator;
-
 public class ProductOfTwoIntegers {
 
 	// 300726788 - Bren Baga
@@ -11,6 +9,7 @@ public class ProductOfTwoIntegers {
 		int maxM = 10;
 		int maxN = 10;
 		
+		// Show products for i * j.
 		for (int i = 0; i < maxM; i++) {
 			
 			for (int j = 0; j < maxN; j++) {
