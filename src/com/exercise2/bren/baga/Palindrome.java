@@ -33,20 +33,23 @@ public class Palindrome {
 	
 	public static boolean isPalindrome(String s) {
 		
-		// Consider empty string is also a palindrome.
+		// Consider empty string as a palindrome also.
 		if (s.length() == 0) {
 			return true;
 		}
 		
+		
 		int lastCharIndex = s.length() - 1;		
 		
-		
+		// Check if the first and last chars are equal.
 		if (s.charAt(0) == s.charAt(lastCharIndex)) {
 			
+			// Base case.
 			if (s.length() <= 3) {
 				return true;
 			}
 			
+			// Recursively evaluate the next-inner substring.
 			String newSubstr = s.substring(1, lastCharIndex);
 			return isPalindrome(newSubstr);
 		}
