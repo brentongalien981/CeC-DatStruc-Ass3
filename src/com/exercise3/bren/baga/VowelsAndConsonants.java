@@ -36,12 +36,15 @@ public class VowelsAndConsonants {
 	
 	
 	/**
+	 * This returns the difference of number of vowels vs consonants.
+	 * For ex: String s = "abc" has 1 vowel and 2 consonants. Thus this
+	 * will return 1 - 2 = -1.
 	 * 
 	 * @param s: The string.
 	 * @return 
-	 * 		-1: If there are more consonants than vowels.
+	 * 		Negative number: If there are more consonants than vowels.
 	 * 		0: If there are equal consonants and vowels.
-	 * 		+1: If there are more vowels than consonants.
+	 * 		Positive number: If there are more vowels than consonants.
 	 */
 	public static int checkMoreVowelsThanConsonants(String s) {
 		
@@ -52,26 +55,31 @@ public class VowelsAndConsonants {
 		}
 		
 		
+		/* Base Case: If strLength is 1. */
+		char ch = s.charAt(0);
+		
 		if (strLength == 1) {
-			if (isVowel(s.charAt(0))) {				
+			if (isVowel(ch)) {				
 				return 1;				
 			}
-			if (isConsonant(s.charAt(0))) {				
+			if (isConsonant(ch)) {				
 				return -1;				
 			}
+			// If char is neither a vowel nor a consonant.
 			return 0;
 		}
 		
 		
-		// Strlength is greater than 1.
+		/* StrLength is greater than 1. */
 		String substr = s.substring(1);
 		
-		if (isVowel(s.charAt(0))) {			
+		if (isVowel(ch)) {			
 			return 1 + checkMoreVowelsThanConsonants(substr);		
 		}
-		if (isConsonant(s.charAt(0))) {				
+		if (isConsonant(ch)) {				
 			return -1 + checkMoreVowelsThanConsonants(substr);				
 		}		
+		// If char is neither a vowel nor a consonant.
 		return 0 + checkMoreVowelsThanConsonants(substr);
 
 	}
