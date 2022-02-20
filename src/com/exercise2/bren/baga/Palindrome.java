@@ -1,66 +1,32 @@
 package com.exercise2.bren.baga;
 
+import java.util.Scanner;
+
 public class Palindrome {
 
 	// 300726788 - Bren Baga
 	// Exercise2
 	public static void main(String[] args) {
 		
-		String s = "a";		
-		System.out.println("s ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
+		Scanner reader = new Scanner(System.in);
 		
-		s = "aa";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
+		// Repeatedly ask user for a string.
+		while (true) {
+			
+			System.out.print("\nEnter a string or 'quit' to exit: ");
+			String s = reader.next();
+			
+			if (s.equals("quit")) {
+				System.out.println("Bye!");
+				break;
+			}
+			
+			String log = String.format("Is '%s' a palindrome? ==> %s", s, isPalindrome(s));
+			System.out.println(log);
+		}
 		
-		s = "ax";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
-		
-		s = "xa";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));		
-		
-		s = "axa";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
-		
-		s = "axxa";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));		
-		
-		s = "bxxa";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));		
-		
-		s = "ayxa";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
-		
-		s = "axya";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
-		
-		s = "axxb";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
-		
-		s = "axYxa";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
-		
-		s = "racecar";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));
-		
-		s = "raceecar";		
-		System.out.println("\ns ==> " + s);
-		System.out.println("isPalindrome(s) ==>  " + isPalindrome(s));		
-		
-		
-		
-
+		reader.close();
+				
 	}
 	
 	
